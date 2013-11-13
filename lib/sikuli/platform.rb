@@ -13,7 +13,7 @@ module Sikuli
       if OS_X
         path = "/Applications/Sikuli-IDE.app/Contents/Resources/Java/sikuli-script.jar"
       else
-        raise LoadError, no_sikuli_home_err_msg if ENV['SIKULI_HOME'].nil?
+        raise LoadError, no_sikuli_home_err_msg unless ENV['SIKULI_HOME'].nil?
         path = "#{ENV['SIKULI_HOME']}/sikuli-script.jar"
       end
       unless File.exist?(path)
