@@ -1,6 +1,6 @@
 # An App object represents a running app on the system.
 #
-module Sikuli
+module Rukuli
   class App
 
     # Public: creates a new App instance

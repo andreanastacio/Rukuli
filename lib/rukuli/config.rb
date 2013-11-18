@@ -1,6 +1,6 @@
 # Config variables for the Sikuli driver
 #
-module Sikuli
+module Rukuli
   class Config
     class << self
 
@@ -22,7 +22,7 @@ module Sikuli
       #
       # Examples
       #
-      #  Sikuli::Config.image_path = "/Users/clemley/sikuli/images/"
+      #  Rukuli::Config.image_path = "/Users/andreanastacio/rukuli/images/"
       #
       # Returns nothing
       def image_path=(path)
@@ -34,14 +34,14 @@ module Sikuli
       #
       # Examples
       #
-      #  Sikuli::Config.logging = false
+      #  Rukuli::Config.logging = false
       #
       # Returns nothing
       def logging=(boolean)
         return unless [TrueClass, FalseClass].include? boolean.class
-        org.sikuli.script::Settings.InfoLogs = boolean
+        org.sikuli.script::Settings.InfoLogs   = boolean
         org.sikuli.script::Settings.ActionLogs = boolean
-        org.sikuli.script::Settings.DebugLogs = boolean
+        org.sikuli.script::Settings.DebugLogs  = boolean
       end
 
       # Public: convienence method for grouping the setting of config
@@ -49,9 +49,9 @@ module Sikuli
       #
       # Examples
       #
-      #   Sikuli::Config.run do |config|
+      #   Rukuli::Config.run do |config|
       #     config.logging = true
-      #     config.image_path = "/User/clemley/images"
+      #     config.image_path = "/User/andreanastacio/images"
       #     config.highlight_on_find = true
       #   end
       #

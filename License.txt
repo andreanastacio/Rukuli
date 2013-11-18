@@ -1,4 +1,4 @@
-Copyright (c) 2013 Chas Lemley
+Copyright (c) 2013 Chas Lemley and André Anastácio
 
 MIT License
 

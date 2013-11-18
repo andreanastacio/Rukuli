@@ -1,7 +1,7 @@
 # Detect the platform we're running on so we can tweak behaviour
 # in various places.
 
-module Sikuli
+module Rukuli
   class Platform
 
     WINDOWS = RbConfig::CONFIG['host_os'] =~ /mswin/

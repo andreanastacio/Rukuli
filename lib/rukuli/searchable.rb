@@ -1,8 +1,8 @@
-# The Sikuli::Searchable module is the heart of Sikuli. It defines the
+# The Rukuli::Searchable module is the heart of Sikuli. It defines the
 # wrapper around Sikuli's on screen image searching and matching capability
 # It is implemented by the Region class.
 #
-module Sikuli
+module Rukuli
   module Searchable
 
     # Public: search for an image within a Region
@@ -19,13 +19,13 @@ module Sikuli
     #
     # Returns an instance of Region representing the best match
     #
-    # Throws Sikuli::FileNotFound if the file could not be found on the system
-    # Throws Sikuli::ImageNotMatched if no matches are found within the region
+    # Throws Rukuli::FileNotFound if the file could not be found on the system
+    # Throws Rukuli::ImageNotMatched if no matches are found within the region
     def find(filename, similarity = 0.9)
       begin
         pattern = build_pattern(filename, similarity)
         match = Region.new(@java_obj.find(pattern))
-        match.highlight if Sikuli::Config.highlight_on_find
+        match.highlight if Rukuli::Config.highlight_on_find
         match
       rescue NativeException => e
         raise_exception e, filename
@@ -48,7 +48,7 @@ module Sikuli
     def find!(filename, similarity = 0.9)
       begin
         find(filename, similarity)
-      rescue Sikuli::ImageNotFound => e
+      rescue Rukuli::ImageNotFound => e
         nil
       end
     end
@@ -71,15 +71,15 @@ module Sikuli
     # Returns an array of Region objects that match the given file and
     # threshold
     #
-    # Throws Sikuli::FileNotFound if the file could not be found on the system
-    # Throws Sikuli::ImageNotMatched if no matches are found within the region
+    # Throws Rukuli::FileNotFound if the file could not be found on the system
+    # Throws Rukuli::ImageNotMatched if no matches are found within the region
     def find_all(filename, similarity = 0.9)
       begin
         pattern = build_pattern(filename, similarity)
         matches = @java_obj.findAll(pattern)
         regions = matches.collect do |r|
           match = Region.new(r)
-          match.highlight if Sikuli::Config.highlight_on_find
+          match.highlight if Rukuli::Config.highlight_on_find
           match
         end
         regions
@@ -104,13 +104,13 @@ module Sikuli
     #
     # Returns nothing
     #
-    # Throws Sikuli::FileNotFound if the file could not be found on the system
-    # Throws Sikuli::ImageNotMatched if no matches are found within the region
+    # Throws Rukuli::FileNotFound if the file could not be found on the system
+    # Throws Rukuli::ImageNotMatched if no matches are found within the region
     def wait(filename, time = 2, similarity = 0.9)
       begin
         pattern = build_pattern(filename, similarity)
         match = Region.new(@java_obj.wait(pattern, time))
-        match.highlight if Sikuli::Config.highlight_on_find
+        match.highlight if Rukuli::Config.highlight_on_find
         match
       rescue NativeException => e
         raise_exception e, filename

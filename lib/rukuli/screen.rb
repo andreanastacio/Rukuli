@@ -3,7 +3,7 @@
 #
 # TODO: Test the Screen object with multiple monitors attached.
 #
-module Sikuli
+module Rukuli
   class Screen < Region
 
     # Public: creates a new Screen object

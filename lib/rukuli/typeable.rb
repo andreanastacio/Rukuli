@@ -1,6 +1,6 @@
 # Defines interactions with the keyboard. Implemented in the Region class.
 #
-module Sikuli
+module Rukuli
   module Typeable
 
     # Public: Types text as if it was being typed on the keyboard with an
@@ -13,7 +13,7 @@ module Sikuli
     # Examples
     #
     #   region.type("Hello World")
-    #   region.type("s", Sikuli::KEY_CMD) # saves a file
+    #   region.type("s", Rukuli::KEY_CMD) # saves a file
     #
     # Returns nothing
     def type(text, modifier = 0)

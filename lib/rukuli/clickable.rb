@@ -1,7 +1,7 @@
 # The Clickable module defines interaction with the mouse. It is included in
 # the Region class.
 #
-module Sikuli
+module Rukuli
   module Clickable
 
     # Public: Performs a single click on an image match or point (x, y)
@@ -152,8 +152,8 @@ module Sikuli
     #
     # Returns nothing
     #
-    # Throws Sikuli::FileNotFound if the file could not be found on the system
-    # Throws Sikuli::ImageNotMatched if no matches are found within the region
+    # Throws Rukuli::FileNotFound if the file could not be found on the system
+    # Throws Rukuli::ImageNotMatched if no matches are found within the region
     def click_image_and_hold(filename, seconds)
       begin
         pattern = org.sikuli.script::Pattern.new(filename).similar(0.9)
@@ -173,8 +173,8 @@ module Sikuli
     #
     # Returns nothing
     #
-    # Throws Sikuli::FileNotFound if the file could not be found on the system
-    # Throws Sikuli::ImageNotMatched if no matches are found within the region
+    # Throws Rukuli::FileNotFound if the file could not be found on the system
+    # Throws Rukuli::ImageNotMatched if no matches are found within the region
     def click_point_and_hold(x, y, seconds)
       begin
         location = org.sikuli.script::Location.new(x, y).offset(x(), y())
@@ -195,8 +195,8 @@ module Sikuli
     #
     # Returns nothing
     #
-    # Throws Sikuli::FileNotFound if the file could not be found on the system
-    # Throws Sikuli::ImageNotMatched if no matches are found within the region
+    # Throws Rukuli::FileNotFound if the file could not be found on the system
+    # Throws Rukuli::ImageNotMatched if no matches are found within the region
     def click_image(filename, is_double = false, and_hold = false)
       begin
         if is_double
@@ -217,8 +217,8 @@ module Sikuli
     #
     # Returns nothing
     #
-    # Throws Sikuli::FileNotFound if the file could not be found on the system
-    # Throws Sikuli::ImageNotMatched if no matches are found within the region
+    # Throws Rukuli::FileNotFound if the file could not be found on the system
+    # Throws Rukuli::ImageNotMatched if no matches are found within the region
     def click_point(x, y, is_double = false)
       if is_double
         @java_obj.doubleClick(org.sikuli.script::Location.new(x, y).offset(x(), y()), 0)
@@ -234,8 +234,8 @@ module Sikuli
     # 
     # Returns nothing
     #
-    # Throws Sikuli::FileNotFound if the file could not be found on the system
-    # Throws Sikuli::ImageNotMatched if no matches are found within the region
+    # Throws Rukuli::FileNotFound if the file could not be found on the system
+    # Throws Rukuli::ImageNotMatched if no matches are found within the region
     def hover_image(filename)
       begin
         @java_obj.hover(filename)
@@ -251,8 +251,8 @@ module Sikuli
     #
     # Returns nothing
     #
-    # Throws Sikuli::FileNotFound if the file could not be found on the system
-    # Throws Sikuli::ImageNotMatched if no matches are found within the region
+    # Throws Rukuli::FileNotFound if the file could not be found on the system
+    # Throws Rukuli::ImageNotMatched if no matches are found within the region
     def hover_point(x, y)
       @java_obj.hover(org.sikuli.script::Location.new(x, y).offset(x(), y()))
     end

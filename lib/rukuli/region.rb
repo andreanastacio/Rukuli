@@ -2,11 +2,11 @@
 # interaction for Sikuli actions. Regions can receive actions from the mouse,
 # keyboard, and image search.
 #
-require "sikuli/clickable"
-require "sikuli/typeable"
-require "sikuli/searchable"
+require "rukuli/clickable"
+require "rukuli/typeable"
+require "rukuli/searchable"
 
-module Sikuli
+module Rukuli
   class Region
     include Clickable
     include Typeable
@@ -76,9 +76,9 @@ module Sikuli
     # Returns nothing
     def raise_exception(exception, filename)
       if exception.message == "org.sikuli.script.FindFailed: File null not exists"
-        raise Sikuli::FileDoesNotExist, "The file '#{filename}' does not exist."
+        raise Rukuli::FileDoesNotExist, "The file '#{filename}' does not exist."
       else
-        raise Sikuli::ImageNotFound, "The image '#{filename}' did not match in this region."
+        raise Rukuli::ImageNotFound, "The image '#{filename}' did not match in this region."
       end
     end
   end
