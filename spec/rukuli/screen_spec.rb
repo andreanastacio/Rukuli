@@ -1,7 +1,7 @@
 require 'spec_helper'
 
-describe Sikuli::Screen, 'when initialized' do
-  subject { Sikuli::Screen.new }
+describe Rukuli::Screen, 'when initialized' do
+  subject { Rukuli::Screen.new }
 
   its(:x) { should == 0 }
   its(:y) { should == 0 }

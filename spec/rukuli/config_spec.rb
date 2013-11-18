@@ -1,22 +1,22 @@
 require 'spec_helper'
 
-describe Sikuli::Config do
+describe Rukuli::Config do
   it "should retain a list of directories to search in for images" do
-    Sikuli::Config.image_path = ""
+    Rukuli::Config.image_path = ""
     java.lang.System.getProperty("SIKULI_IMAGE_PATH").should == ""
   end
 
   it "should allow a path to be added" do
-    Sikuli::Config.run do |config|
+    Rukuli::Config.run do |config|
       config.image_path = '/Users/images/'
     end
 
     java.lang.System.getProperty("SIKULI_IMAGE_PATH").should == '/Users/images/'
-    Sikuli::Config.image_path.should == '/Users/images/'
+    Rukuli::Config.image_path.should == '/Users/images/'
   end
 
   it "should allow logging to be turned on" do
-    Sikuli::Config.run do |config|
+    Rukuli::Config.run do |config|
       config.logging = true
     end
 
@@ -26,7 +26,7 @@ describe Sikuli::Config do
   end
 
   it "should allow logging to be turned off" do
-    Sikuli::Config.run do |config|
+    Rukuli::Config.run do |config|
       config.logging = false
     end
 
@@ -36,12 +36,12 @@ describe Sikuli::Config do
   end
 
   it "should allow us to turn off highlighting on find" do
-    Sikuli::Config.highlight_on_find = false
-    Sikuli::Config.highlight_on_find.should be_false
+    Rukuli::Config.highlight_on_find = false
+    Rukuli::Config.highlight_on_find.should be_false
   end
 
   it "should allow us to turn on highlighting on find" do
-    Sikuli::Config.highlight_on_find = true
-    Sikuli::Config.highlight_on_find.should be_true
+    Rukuli::Config.highlight_on_find = true
+    Rukuli::Config.highlight_on_find.should be_true
   end
 end

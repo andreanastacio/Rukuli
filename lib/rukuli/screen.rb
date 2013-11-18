@@ -1,4 +1,4 @@
-# A Screen object defines a special type of Sikuli::Region that represents
+# A Screen object defines a special type of Rukuli::Region that represents
 # the entire screen.
 #
 # TODO: Test the Screen object with multiple monitors attached.
@@ -10,7 +10,7 @@ module Rukuli
     #
     # Examples
     #
-    #   screen = Sikuli::Screen.new
+    #   screen = Rukuli::Screen.new
     #
     # Returns the newly initialized Screen object
     def initialize
