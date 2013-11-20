@@ -58,9 +58,9 @@ module Rukuli
       @java_obj.h()
     end
 
-		# Public: provide access to all region methods provided by the SikuliScript API
-		# See http://sikuli.org/doc/java/edu/mit/csail/uid/Region.html
-		def method_missing method_name, *args, &block
+    # Public: provide access to all region methods provided by the SikuliScript API
+    # See http://sikuli.org/doc/java/edu/mit/csail/uid/Region.html
+    def method_missing method_name, *args, &block
       @java_obj.send method_name, *args, &block
     end
 

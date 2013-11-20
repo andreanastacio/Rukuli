@@ -39,9 +39,9 @@ module Rukuli
       # Returns nothing
       def logging=(boolean)
         return unless [TrueClass, FalseClass].include? boolean.class
-        org.sikuli.script::Settings.InfoLogs   = boolean
-        org.sikuli.script::Settings.ActionLogs = boolean
-        org.sikuli.script::Settings.DebugLogs  = boolean
+        org.sikuli.basics::Settings.InfoLogs   = boolean
+        org.sikuli.basics::Settings.ActionLogs = boolean
+        org.sikuli.basics::Settings.DebugLogs  = boolean
       end
 
       # Public: convienence method for grouping the setting of config

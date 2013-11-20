@@ -1,5 +1,4 @@
-Rukuli  ** UNDER DEVELOPMENT **
-======
+# Rukuli  ** UNDER DEVELOPMENT **
 
 [![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/andreanastacio/rukuli/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
 

@@ -20,9 +20,9 @@ describe Rukuli::Config do
       config.logging = true
     end
 
-    org.sikuli.script::Settings.InfoLogs.should be_true
-    org.sikuli.script::Settings.ActionLogs.should be_true
-    org.sikuli.script::Settings.DebugLogs.should be_true
+    org.sikuli.basics::Settings.InfoLogs.should be_true
+    org.sikuli.basics::Settings.ActionLogs.should be_true
+    org.sikuli.basics::Settings.DebugLogs.should be_true
   end
 
   it "should allow logging to be turned off" do
@@ -30,9 +30,9 @@ describe Rukuli::Config do
       config.logging = false
     end
 
-    org.sikuli.script::Settings.InfoLogs.should be_false
-    org.sikuli.script::Settings.ActionLogs.should be_false
-    org.sikuli.script::Settings.DebugLogs.should be_false
+    org.sikuli.basics::Settings.InfoLogs.should be_false
+    org.sikuli.basics::Settings.ActionLogs.should be_false
+    org.sikuli.basics::Settings.DebugLogs.should be_false
   end
 
   it "should allow us to turn off highlighting on find" do

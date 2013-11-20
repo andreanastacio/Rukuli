@@ -43,7 +43,7 @@ module Rukuli
         else raise ArgumentError
       end
     end
-    
+
     # Public: Performs a click and hold on an image match or point (x, y)
     #
     # args - String representing filename of image to find and click
@@ -81,8 +81,7 @@ module Rukuli
     def drag_drop(start_x, start_y, end_x, end_y)
       @java_obj.dragDrop(
         org.sikuli.script::Location.new(start_x, start_y).offset(x(), y()),
-        org.sikuli.script::Location.new(end_x, end_y).offset(x(), y()),
-        0
+        org.sikuli.script::Location.new(end_x, end_y).offset(x(), y())
       )
     end
 
@@ -165,7 +164,7 @@ module Rukuli
         raise_exception e, filename
       end
     end
-    
+
     # Private: clicks on a point within the region
     #
     # filename - A String representation of the filename of the region to
@@ -231,7 +230,7 @@ module Rukuli
     #
     # filename - A String representation of the filename of the region to
     # match against
-    # 
+    #
     # Returns nothing
     #
     # Throws Rukuli::FileNotFound if the file could not be found on the system
