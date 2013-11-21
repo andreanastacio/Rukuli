@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe Rukuli::Region, "#Typeable" do
   before(:all) do
-    app = Rukuli::App.new("TextEdit")
+    app = Rukuli::App.new(application "TEXT_EDIT")
     app.focus
     @region = app.window
   end
