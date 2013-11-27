@@ -80,8 +80,8 @@ module Rukuli
     # Returns nothing
     def drag_drop(start_x, start_y, end_x, end_y)
       @java_obj.dragDrop(
-        org.sikuli.script::Location.new(start_x, start_y).offset(x(), y()),
-        org.sikuli.script::Location.new(end_x, end_y).offset(x(), y())
+        offset_location(start_x, start_y),
+        offset_location(end_x, end_y)
       )
     end
 
@@ -176,8 +176,7 @@ module Rukuli
     # Throws Rukuli::ImageNotMatched if no matches are found within the region
     def click_point_and_hold(x, y, seconds)
       begin
-        location = org.sikuli.script::Location.new(x, y).offset(x(), y())
-        @java_obj.hover(location)
+        @java_obj.hover(location(x, y))
         @java_obj.mouseDown(java.awt.event.InputEvent::BUTTON1_MASK)
         sleep(seconds.to_i)
         @java_obj.mouseUp(0)
@@ -219,10 +218,12 @@ module Rukuli
     # Throws Rukuli::FileNotFound if the file could not be found on the system
     # Throws Rukuli::ImageNotMatched if no matches are found within the region
     def click_point(x, y, is_double = false)
+      location = offset_location(x, y)
+
       if is_double
-        @java_obj.doubleClick(org.sikuli.script::Location.new(x, y).offset(x(), y()), 0)
+        @java_obj.doubleClick(location)
       else
-        @java_obj.click(org.sikuli.script::Location.new(x, y).offset(x(), y()), 0)
+        @java_obj.click(location)
       end
     end
 
@@ -253,7 +254,27 @@ module Rukuli
     # Throws Rukuli::FileNotFound if the file could not be found on the system
     # Throws Rukuli::ImageNotMatched if no matches are found within the region
     def hover_point(x, y)
-      @java_obj.hover(org.sikuli.script::Location.new(x, y).offset(x(), y()))
+      @java_obj.hover(offset_location(x, y))
+    end
+
+    # Private: create a new instance of Location
+    #
+    # x         - a Fixnum representing the x component of the point to hover
+    # y         - a Fixnum representing the y component of the point to hover
+    #
+    # Return location class instance
+    def location(x, y)
+      org.sikuli.script::Location.new(x, y)
+    end
+
+    # Private: location with offset
+    #
+    # x         - a Fixnum representing the x component of the point to hover
+    # y         - a Fixnum representing the y component of the point to hover
+    #
+    # Return new location
+    def offset_location(x, y)
+      location(x, y).offset(x(), y())
     end
   end
 end

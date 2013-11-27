@@ -35,7 +35,7 @@ module Rukuli
     #
     # Returns nothing
     def highlight(seconds = 1)
-      @java_obj.highlight(seconds)
+      @java_obj.java_send(:highlight, [Java::int], seconds)
     end
 
     # Public: the x component of the top, left corner of the Region
