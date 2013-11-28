@@ -218,12 +218,10 @@ module Rukuli
     # Throws Rukuli::FileNotFound if the file could not be found on the system
     # Throws Rukuli::ImageNotMatched if no matches are found within the region
     def click_point(x, y, is_double = false)
-      location = offset_location(x, y)
-
       if is_double
-        @java_obj.doubleClick(location)
+        @java_obj.doubleClick(offset_location(x, y))
       else
-        @java_obj.click(location)
+        @java_obj.click(offset_location(x, y))
       end
     end
 
