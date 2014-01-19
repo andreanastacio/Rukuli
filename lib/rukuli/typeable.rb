@@ -19,5 +19,14 @@ module Rukuli
     def type(text, modifier = 0)
       @java_obj.type(nil, text, modifier)
     end
+
+    # Public: Types text then presses the return/enter key on the keyboard
+    #
+    # text - String
+    #
+    # Returns nothing
+    def enter(text)
+      @java_obj.type(text + Sikuli::KEY_RETURN)
+    end
   end
 end
