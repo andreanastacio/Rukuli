@@ -1,7 +1,6 @@
-# Rukuli  ** UNDER DEVELOPMENT **
+# Rukuli
 
 [![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/andreanastacio/rukuli/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
-
 
 This project is a fork of [sikuli_ruby](https://github.com/chaslemley/sikuli_ruby)!
 
@@ -12,12 +11,6 @@ This project is a fork of [sikuli_ruby](https://github.com/chaslemley/sikuli_rub
 * [JRuby](http://jruby.org/download) or ```rvm install jruby```
 
 ## Compatibility
-
-It's recommended to use JRuby ~> 1.6.0 and run it in 1.9 mode to get unicode characters working as expected.
-
-```
-export JRUBY_OPTS=--1.9
-```
 
 Make sure to set SIKULI_HOME to the Sikuli installation directory and to add the Sikuli installation directory and Sikuli libs directory to the include path.
 
