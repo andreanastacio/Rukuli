@@ -1,15 +1,15 @@
 IMAGE_VIEWER:
-  darwin:
+  darwin|mac os:
     'Preview'
-  cygwin|mswin|mingw|bccwin|wince|emx:
-    "Paint"
+  cygwin|mswin|mingw|bccwin|wince|emx|mswin32:
+    "explorer"
 FILE_EXPLORER:
-  darwin:
+  darwin|mac os:
     'Finder'
-  cygwin|mswin|mingw|bccwin|wince|emx:
-    "Explorer"
+  cygwin|mswin|mingw|bccwin|wince|emx|mswin32:
+    "explorer"
 TEXT_EDIT:
   darwin|mac os:
     'TextEdit'
-  cygwin|mswin|mingw|bccwin|wince|emx:
-    "Note Pad"
+  cygwin|mswin|mingw|bccwin|wince|emx|mswin32:
+    "notepad"

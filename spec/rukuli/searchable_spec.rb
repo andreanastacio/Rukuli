@@ -14,13 +14,11 @@ describe Rukuli::Region, "#Searchable" do
   end
 
   it "should raise an error if a file can not be found" do
-    lambda { @region.find("no_photo.png") }.should
-      raise_error(Rukuli::FileDoesNotExist, "The file 'no_photo.png' does not exist.")
+    expect { @region.find("no_photo.png") }.to raise_error(Rukuli::FileDoesNotExist, "The file 'no_photo.png' does not exist.")
   end
 
   it "should not find an image that is not in the region" do
-    lambda { @region.find("apple.png") }.should
-      raise_error(Rukuli::ImageNotFound, "The image 'apple.png' did not match in this region.")
+    expect { @region.find("apple.png") }.to raise_error(Rukuli::ImageNotFound, "The image 'apple.png' did not match in this region.")
   end
 
   it "should return true if the image is found" do
@@ -32,14 +30,12 @@ describe Rukuli::Region, "#Searchable" do
   end
 
   it "should raise an exception if the file does not exist" do
-    lambda { @region.find!("no_photo.png") }.should
-      raise_error(Rukuli::FileDoesNotExist, "The file 'no_photo.png' does not exist.")
+    expect { @region.find!("no_photo.png") }.to raise_error(Rukuli::FileDoesNotExist, "The file 'no_photo.png' does not exist.")
   end
 
   context "#wait" do
     it "should raise an error if no match is found after a given time" do
-      lambda { @region.wait('apple.png') }.should
-        raise_error(Rukuli::ImageNotFound, "The image 'apple.png' did not match in this region.")
+      expect { @region.wait('apple.png') }.to raise_error(Rukuli::ImageNotFound, "The image 'apple.png' did not match in this region.")
     end
 
     it "should return a Region object when a match is found" do
@@ -54,8 +50,7 @@ describe Rukuli::Region, "#Searchable" do
     end
 
     it "should raise an error if no matches are found" do
-      lambda { @region.find_all("apple.png") }.should
-        raise_error(Rukuli::ImageNotFound, "The image 'apple.png' did not match in this region.")
+      expect { @region.find_all("apple.png") }.to raise_error(Rukuli::ImageNotFound, "The image 'apple.png' did not match in this region.")
     end
 
     it "should return an array" do

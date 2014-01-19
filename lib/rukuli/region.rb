@@ -75,7 +75,7 @@ module Rukuli
     #
     # Returns nothing
     def raise_exception(exception, filename)
-      if exception.message == "org.sikuli.script.FindFailed: File null not exists"
+      if exception.message == "org.sikuli.script.FindFailed: ImageFile null not found on disk"
         raise Rukuli::FileDoesNotExist, "The file '#{filename}' does not exist."
       else
         raise Rukuli::ImageNotFound, "The image '#{filename}' did not match in this region."
