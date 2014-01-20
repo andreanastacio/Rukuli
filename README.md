@@ -1,6 +1,7 @@
 # Rukuli
 
 [![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/andreanastacio/rukuli/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+[![Code Climate](https://codeclimate.com/github/andreanastacio/Rukuli.png)](https://codeclimate.com/github/andreanastacio/Rukuli)
 
 This project is a fork of [sikuli_ruby](https://github.com/chaslemley/sikuli_ruby)!
 
