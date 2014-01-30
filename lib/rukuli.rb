@@ -1,5 +1,5 @@
 require "rukuli/platform"
-require Rukuli::Platform.sikuli_script_path
+require Rukuli::Platform.sikulix_path
 require "rukuli/version"
 
 require "rukuli/app"
