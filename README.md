@@ -5,10 +5,10 @@
 
 This project is a fork of [sikuli_ruby](https://github.com/chaslemley/sikuli_ruby)!
 
-[Sikuli](http://sikuli.org/) allows you to interact with your application's user interface using image based search to automate user actions.
+[SikuliX](http://www.sikulix.com/) allows you to interact with your application's user interface using image based search to automate user actions.
 
 ## Requirements
-* [Sikuli-Script 1.0.1](https://launchpad.net/sikuli/+download) (Install Sikuli-Script via sikuli-setup.jar)
+* [Sikulix-ide.jar](https://launchpad.net/sikuli/+download) (Install Sikulix-ide.jar via sikuli-setup.jar)
 * [JRuby](http://jruby.org/download) or ```rvm install jruby```
 
 ## Compatibility
@@ -18,12 +18,12 @@ Make sure to set SIKULI_HOME to the Sikuli installation directory and to add the
 ### Windows
 
 ```
- setx SIKULI_HOME C:/path/to/sikuli-script.jar
+ setx SIKULI_HOME C:/path/to/sikulix-ide.jar
 ```
 
 ### Linux / OSX
 ```bash
- export SIKULI_HOME="~/path/to/sikuli-script.jar"
+ export SIKULI_HOME="~/path/to/sikulix-ide.jar
 ```
 
 # Installation
