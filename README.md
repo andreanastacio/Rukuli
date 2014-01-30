@@ -23,7 +23,7 @@ Make sure to set SIKULI_HOME to the Sikuli installation directory and to add the
 
 ### Linux / OSX
 ```bash
- export SIKULI_HOME="~/path/to/sikulix-ide.jar
+ export SIKULI_HOME="~/path/to/sikulix-ide.jar"
 ```
 
 # Installation
